@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    .scroll-hidden {
+        -webkit-overflow-scrolling: touch; /* Optional: Ensures smooth scrolling on iOS devices */
+    }
+    .scroll-hidden::-webkit-scrollbar {
+        display: none; /* For Chrome, Safari, and Opera */
+    }
+
+    .shadow-music-player {
+        box-shadow: 0 40px 20px -20px rgba(0,0,0,0.5);
+    }
+}
+
+@layer components {
+    .control-button {
+        @apply bg-[#1b1b1b] rounded-full p-4
+            hover:brightness-125
+            active:ring-8 ring-blue-500/30
+            transition duration-150;
+    }
+
+    .slider {
+        @apply absolute top-0 left-0
+        appearance-none
+        w-full h-2 transition rounded
+        bg-transparent outline-none
+    }
+
+    .slider::-webkit-slider-thumb {
+        @apply
+            appearance-none
+            w-3 h-3
+            active:w-3 active:h-3
+            active:ring-8 ring-blue-500/30
+            rounded-full bg-blue-500 cursor-pointer
+            transition-all duration-150
+    }   
+}
+
